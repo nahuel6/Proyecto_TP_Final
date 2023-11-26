@@ -1,0 +1,173 @@
+# depslib dependency file v1.0
+1699440858 source:c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+	"cuenta.h"
+	"movimientos.h"
+	<time.h>
+
+1699438013 c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\cliente.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1699440858 source:c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+
+1699440920 source:c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\cuenta.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cuenta.h"
+
+1699438965 source:c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\menugeneral.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+	"movimientos.h"
+
+1699440858 source:c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\movimientos.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"movimientos.h"
+	<time.h>
+
+1687314389 source:c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\random.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+	<time.h>
+
+1699437963 source:c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\archivoscargados.c
+	"cliente.h"
+	"cuenta.h"
+	"movimientos.h"
+
+1699440858 c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\cuenta.h
+	"cliente.h"
+
+1699438664 c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\movimientos.h
+	"cuenta.h"
+
+1699403187 source:c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\arbolcliente.c
+	"arbolCliente.h"
+
+1699438251 c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\arbolcliente.h
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+	"ArregloDeCuentas.h"
+
+1699438283 c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\arreglodecuentas.h
+	<stdio.h>
+	<stdlib.h>
+	"cuenta.h"
+	"ListaMovimientos.h"
+
+1699438506 c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\listamovimientos.h
+	<stdio.h>
+	<stdlib.h>
+	"movimientos.h"
+
+1699403187 source:c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\arreglodecuentas.c
+	"ArregloDeCuentas.h"
+
+1699438864 source:c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\listamovimientos.c
+	"ListaMovimientos.h"
+
+1699403187 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arbolcliente.c
+	"arbolCliente.h"
+
+1699438251 d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arbolcliente.h
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+	"ArregloDeCuentas.h"
+
+1699442027 d:\utn\prog 2\2 er p\tp final\nuevo tp 2\cliente.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1699438283 d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arreglodecuentas.h
+	<stdio.h>
+	<stdlib.h>
+	"cuenta.h"
+	"ListaMovimientos.h"
+
+1699440858 d:\utn\prog 2\2 er p\tp final\nuevo tp 2\cuenta.h
+	"cliente.h"
+
+1699441232 d:\utn\prog 2\2 er p\tp final\nuevo tp 2\listamovimientos.h
+	<stdio.h>
+	<stdlib.h>
+	"movimientos.h"
+
+1699438664 d:\utn\prog 2\2 er p\tp final\nuevo tp 2\movimientos.h
+	"cuenta.h"
+
+1699403187 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arreglodecuentas.c
+	"ArregloDeCuentas.h"
+
+1699440858 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+
+1699440920 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\cuenta.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cuenta.h"
+
+1699438864 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\listamovimientos.c
+	"ListaMovimientos.h"
+
+1699440948 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+	"cuenta.h"
+	"movimientos.h"
+	<time.h>
+
+1699438965 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\menugeneral.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+	"movimientos.h"
+
+1699440858 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\movimientos.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"movimientos.h"
+	<time.h>
+
+1699437963 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\archivosrandom.c
+	"cliente.h"
+	"cuenta.h"
+	"movimientos.h"
+
