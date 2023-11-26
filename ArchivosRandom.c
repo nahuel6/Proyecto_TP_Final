@@ -9,9 +9,9 @@ void cargarRandom(){
     stMovimiento movimiento;
     srand(time(NULL));
     int num=0;
-    FILE* archi = fopen(ARCHI_CLIENTE,"a+b");
-    FILE* archiCuenta = fopen(ARCHI_CUENTA,"a+b");
-    FILE* archiMov = fopen(ARCHI_MOVIMIENTOS,"a+b");
+    FILE* archi = fopen(ARCHI_CLIENTE,"wb");
+    FILE* archiCuenta = fopen(ARCHI_CUENTA,"wb");
+    FILE* archiMov = fopen(ARCHI_MOVIMIENTOS,"wb");
     if(archi){
         if(archiCuenta){
             if(archiMov){

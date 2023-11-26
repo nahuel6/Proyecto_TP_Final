@@ -50,6 +50,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="cliente.h" />
+		<Unit filename="controlador.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="controlador.h" />
 		<Unit filename="cuenta.c">
 			<Option compilerVar="CC" />
 		</Unit>

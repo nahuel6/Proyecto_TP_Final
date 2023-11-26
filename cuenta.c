@@ -48,19 +48,7 @@ void mostrarCuenta(stCuenta cuenta){
     printf("\n ====================");
 }
 
-/*int nroCuentaA(){
-    stCuenta cuenta;
-    int id=nroCuentaB();
-    FILE *archi = fopen(ARCHI_CUENTA, "rb");
-    if(archi){
-        fseek(archi, sizeof(stCuenta)*(-1),SEEK_END);
-        if(fread(&cuenta ,sizeof(stCuenta),1,archi) > 0){
-            id = cuenta.nroCuenta;
-        }
-        fclose(archi);
-    }
-return id+2;
-}*/
+
 
 int nroCuentaA(int nroCuenta){
     int id=nroCuentaB();

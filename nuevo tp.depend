@@ -89,10 +89,10 @@
 1699438864 source:c:\users\dell\desktop\u.t.n\programacion y laboratorio\tp final\nuevo tp\listamovimientos.c
 	"ListaMovimientos.h"
 
-1699403187 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arbolcliente.c
+1700449019 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arbolcliente.c
 	"arbolCliente.h"
 
-1699438251 d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arbolcliente.h
+1700448457 d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arbolcliente.h
 	<stdio.h>
 	<stdlib.h>
 	"cliente.h"
@@ -103,7 +103,7 @@
 	<stdlib.h>
 	<time.h>
 
-1699438283 d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arreglodecuentas.h
+1699483703 d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arreglodecuentas.h
 	<stdio.h>
 	<stdlib.h>
 	"cuenta.h"
@@ -120,17 +120,17 @@
 1699438664 d:\utn\prog 2\2 er p\tp final\nuevo tp 2\movimientos.h
 	"cuenta.h"
 
-1699403187 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arreglodecuentas.c
+1700272135 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\arreglodecuentas.c
 	"ArregloDeCuentas.h"
 
-1699440858 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\cliente.c
+1700260784 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\cliente.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<string.h>
 	"cliente.h"
 
-1699440920 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\cuenta.c
+1700260784 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\cuenta.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -140,7 +140,7 @@
 1699438864 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\listamovimientos.c
 	"ListaMovimientos.h"
 
-1699440948 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\main.c
+1700407961 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -148,15 +148,17 @@
 	"cliente.h"
 	"cuenta.h"
 	"movimientos.h"
+	"arbolCliente.h"
 	<time.h>
 
-1699438965 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\menugeneral.c
+1700522020 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\menugeneral.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<string.h>
 	"cliente.h"
 	"movimientos.h"
+	"arbolCliente.h"
 
 1699440858 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\movimientos.c
 	<stdio.h>
@@ -166,8 +168,101 @@
 	"movimientos.h"
 	<time.h>
 
-1699437963 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\archivosrandom.c
+1700521964 source:d:\utn\prog 2\2 er p\tp final\nuevo tp 2\archivosrandom.c
 	"cliente.h"
 	"cuenta.h"
 	"movimientos.h"
+
+1700944376 source:c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\arbolcliente.c
+	"arbolCliente.h"
+
+1700603390 c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\arbolcliente.h
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+	"ArregloDeCuentas.h"
+
+1699442027 c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\cliente.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1700941408 c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\arreglodecuentas.h
+	<stdio.h>
+	<stdlib.h>
+	"cuenta.h"
+	"ListaMovimientos.h"
+	"ArregloDeCuentas.h"
+
+1699440858 c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\cuenta.h
+	"cliente.h"
+
+1699441232 c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\listamovimientos.h
+	<stdio.h>
+	<stdlib.h>
+	"movimientos.h"
+
+1699438664 c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\movimientos.h
+	"cuenta.h"
+
+1700521964 source:c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\archivosrandom.c
+	"cliente.h"
+	"cuenta.h"
+	"movimientos.h"
+
+1700272135 source:c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\arreglodecuentas.c
+	"ArregloDeCuentas.h"
+
+1700260784 source:c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+
+1700260784 source:c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\cuenta.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cuenta.h"
+
+1699438864 source:c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\listamovimientos.c
+	"ListaMovimientos.h"
+
+1700944452 source:c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+	"cuenta.h"
+	"movimientos.h"
+	"arbolCliente.h"
+	<time.h>
+	"controlador.h"
+
+1700589232 source:c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\menugeneral.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+	"movimientos.h"
+	"arbolCliente.h"
+
+1699440858 source:c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\movimientos.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"movimientos.h"
+	<time.h>
+
+1700945978 source:c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\controlador.c
+	"controlador.h"
+
+1700941421 c:\users\f16227\desktop\nuevo tp 2\nuevo tp 2\controlador.h
+	"arbolCliente.h"
+	"ArregloDeCuentas.h"
 

@@ -27,10 +27,6 @@ stCliente cargarCliente(){
     fflush(stdin);
     gets(cliente.email);
 
-    /*printf("\n Ingrese su contrasena: ");
-    fflush(stdin);
-    gets(cliente.contrasena);*/
-
     printf("\n Ingrese su domicilio: ");
     fflush(stdin);
     gets(cliente.domicilio);
@@ -57,51 +53,6 @@ void mostrarCliente(stCliente cliente){
     printf("\n Eliminado:..........: %d", cliente.eliminado);
     printf("\n==================================");
 }
-/*
-int logearse(char nombreArchivo[]){
-    char usuario[30];
-    char contrasena[30];
-    stCliente cliente;
-    FILE* archi=fopen(nombreArchivo,"rb");
-    int flag=0;
-
-
-    system("cls");
-    printf("\n Usuario: ");
-    fflush(stdin);
-    gets(usuario);
-    printf("\n Contrasena: ");
-    fflush(stdin);
-    gets(contrasena);
-
-    if(archi){
-        while(fread(&cliente,sizeof(stCliente),1,archi)>0){
-            if(strcmpi(usuario,cliente.email)==0 && strcmpi(contrasena,cliente.contrasena)==0){
-                flag=1;
-            }
-        }
-        if(flag==0){
-            printf("\n Ingrese un usuario valido...");
-        }
-    }
-
-    fclose(archi);
-    return flag;
-}*/
-
-/*int idautoincremental (){
-    stCliente cliente;
-    int id=idAuto();
-    FILE *archi = fopen(ARCHI_CLIENTE, "rb");
-    if(archi){
-        fseek(archi, sizeof(stCliente)*(-1),SEEK_END);
-        if(fread(&cliente ,sizeof(stCliente),1,archi) > 0){
-            id = cliente.id;
-        }
-        fclose(archi);
-    }
-return id+1;
-}*/
 
 int idautoincremental(int clienteId){
     int id=idAuto();
@@ -116,19 +67,6 @@ int idAuto(){
     return i;
 }
 
-/*int nroClienteA(){
-    stCliente cliente;
-    int id=nroClienteB();
-    FILE *archi = fopen(ARCHI_CLIENTE, "rb");
-    if(archi){
-        fseek(archi, sizeof(stCliente)*(-1),SEEK_END);
-        if(fread(&cliente ,sizeof(stCliente),1,archi) > 0){
-            id = cliente.nroCliente;
-        }
-        fclose(archi);
-    }
-return id+10;
-}*/
 
 int nroClienteA(int nroCliente){
     int id=nroClienteB();
