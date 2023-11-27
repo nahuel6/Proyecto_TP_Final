@@ -83,7 +83,7 @@ int agregarCuentasACliente( nodoArbolCliente* arbol, FILE* f )
         return 0;
     }
 
-    printf("Cliente seleccionado: %d \n", arbol->Dato.nroCliente);
+    //printf("Cliente seleccionado: %d \n", arbol->Dato.nroCliente);
 
     if(arbol)
     {
@@ -96,13 +96,13 @@ int agregarCuentasACliente( nodoArbolCliente* arbol, FILE* f )
                 AUX_CELDA = (celdaCuentas*)malloc(sizeof(celdaCuentas));
                 AUX_CELDA->dato = AUX;
                 arbol->arregloCuentas[ AUX.tipoDeCuenta - 1 ] = AUX_CELDA;
-                printf("Cuenta agregada ID: %d\n",  arbol->arregloCuentas[ AUX.tipoDeCuenta - 1 ]->dato.id);
+                //printf("Cuenta agregada ID: %d\n",  arbol->arregloCuentas[ AUX.tipoDeCuenta - 1 ]->dato.id);
             }
         }
     }
     fseek(f, 0, SEEK_SET);
 
-    printf("Cliente seleccionado FIN\n");
+
 
 
 
@@ -122,10 +122,100 @@ void agregarCuentasInOrder( nodoArbolCliente* arbol, FILE* f )
 
 }
 
+
+int cargarMovimientosPorCliente( nodoArbolCliente* arbol, char nombreArchivo[] )
+{
+    FILE* f;
+    f = fopen( nombreArchivo, "rb" );
+    if(f)
+    {
+
+        agregarMovimientosInOrder( arbol, f );
+        fclose(f);
+        return 1;
+
+    }
+    else
+    {
+        printf("ERROR! No se pudo encontrar o leer %s\n", nombreArchivo);
+        return 0;
+    }
+}
+
+void agregarMovimientosInOrder( nodoArbolCliente* arbol, FILE* f )
+{
+
+    if(arbol)
+    {
+        agregarMovimientosInOrder(arbol->der, f);
+        agregarMovimientosACliente( arbol, f );
+        agregarMovimientosInOrder(arbol->izq, f);
+    }
+}
+
+int agregarMovimientosACliente( nodoArbolCliente* cliente, FILE* f )
+{
+    if(!cliente)
+    {
+        return 0;
+    }
+
+    //printf("Cliente seleccionado: %d \n", arbol->Dato.nroCliente);
+
+    if(cliente)
+    {
+        for( int i = 0; i < 2; i++ )
+        {
+            if(cliente->arregloCuentas[i] != 0 )
+            {
+                agregarMovimientosACuenta( cliente->arregloCuentas[i], f  );
+            }
+        }
+    }
+
+    return 1;
+}
+
+int agregarMovimientosACuenta( celdaCuentas* cuenta, FILE* f  )
+{
+    stMovimiento AUX;
+    nodoListaMovimiento* AUX_NODO;
+
+    if(cuenta)
+    {
+        printf("Cuenta seleccionada ID %d\n", cuenta->dato.nroCuenta);
+        cuenta->ListaMovimientos = inicLista();
+
+        while(fread( &AUX, sizeof(stMovimiento), 1, f ) > 0)
+        {
+            if(cuenta->dato.nroCuenta == AUX.idCuenta)
+            {
+                AUX_NODO = crearNodo( AUX );
+                cuenta->ListaMovimientos = agregarAlPrincipio( cuenta->ListaMovimientos, AUX_NODO );
+                printf("MOV agregado ID %d\n", AUX.id);
+            }
+        }
+    }
+    fseek(f, 0, SEEK_SET);
+
+    return 1;
+
+}
+
 int cargarDatos( nodoArbolCliente* arbol )
 {
+    printf("Cargando Clientes...");
     arbol = cargarArbolCliente( arbol, "cliente.dat" );
+    printf(" OK.\n");
+
+    printf("Cargando Cuentas...");
     cargarCuentasPorCliente(arbol, "cuenta.dat");
+    printf(" OK.\n");
+
+    printf("Cargando Movimientos...");
+    cargarMovimientosPorCliente(arbol, "movimientos.dat");
+    printf(" OK.\n");
+
 
     return 0;
 }
