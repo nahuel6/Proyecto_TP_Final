@@ -266,3 +266,99 @@
 	"arbolCliente.h"
 	"ArregloDeCuentas.h"
 
+1701207345 source:c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\arbolcliente.c
+	"arbolCliente.h"
+
+1701206698 c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\arbolcliente.h
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+	"ArregloDeCuentas.h"
+
+1701188152 c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\cliente.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1701192420 c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\arreglodecuentas.h
+	<stdio.h>
+	<stdlib.h>
+	"cuenta.h"
+	"ListaMovimientos.h"
+	"ArregloDeCuentas.h"
+
+1699440858 c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\cuenta.h
+	"cliente.h"
+
+1701200152 c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\listamovimientos.h
+	<stdio.h>
+	<stdlib.h>
+	"movimientos.h"
+
+1699438664 c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\movimientos.h
+	"cuenta.h"
+
+1701131798 source:c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\archivosrandom.c
+	"cliente.h"
+	"cuenta.h"
+	"movimientos.h"
+
+1701192474 source:c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\arreglodecuentas.c
+	"ArregloDeCuentas.h"
+
+1701195008 source:c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+
+1701187347 source:c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\controlador.c
+	"controlador.h"
+
+1701184799 c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\controlador.h
+	"arbolCliente.h"
+	"ArregloDeCuentas.h"
+
+1701131798 source:c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\cuenta.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cuenta.h"
+
+1701200217 source:c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\listamovimientos.c
+	"ListaMovimientos.h"
+
+1701207373 source:c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+	"cuenta.h"
+	"movimientos.h"
+	"arbolCliente.h"
+	<time.h>
+	"controlador.h"
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1701207217 source:c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\menugeneral.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"cliente.h"
+	"movimientos.h"
+	"arbolCliente.h"
+
+1700791893 source:c:\users\f16227\documents\utn\progra2tp\tp_final_progra_2_com_9\movimientos.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"movimientos.h"
+	<time.h>
+

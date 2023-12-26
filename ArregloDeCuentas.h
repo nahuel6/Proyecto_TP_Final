@@ -20,5 +20,7 @@ typedef struct
 
 int agregar (celdaCuentas adl[],int v, stCuenta cuenta);
 
+void borrarCuenta( celdaCuentas* cuenta );
+
 
 #endif // ARREGLODECUENTAS_H_INCLUDED

@@ -23,7 +23,7 @@ typedef struct{
 //CLIENTE.C
 int nroClienteB();
 int nroClienteA();
-stCliente cargarCliente();
+stCliente cargarCliente(char dni[]);
 stCliente cargarClienteRandom(int clienteId, int nroCliente,int num, int numDni);
 void mostrarCliente(stCliente cliente);
 int logearse(char nombreArchivo[]);
@@ -32,11 +32,10 @@ int idAuto();
 
 //MENU GENERAL
 int mostrarOpciones();
-void darAltaCliente(char nombreArchivo[],char nombreCuentaArchi[]);
+//void darAltaCliente(char nombreArchivo[],char nombreCuentaArchi[]);
 int buscarDni(char nombreArchivo[], char dni[10]);
 void hacerMovMenu();
 void bajaCliente();
-void buscarCliente();
 void movimientoPorFecha();
 
 //RANDOM.C

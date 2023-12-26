@@ -183,7 +183,7 @@ int agregarMovimientosACuenta( celdaCuentas* cuenta, FILE* f  )
 
     if(cuenta)
     {
-        printf("Cuenta seleccionada ID %d\n", cuenta->dato.nroCuenta);
+        //printf("Cuenta seleccionada ID %d\n", cuenta->dato.nroCuenta);
         cuenta->ListaMovimientos = inicLista();
 
         while(fread( &AUX, sizeof(stMovimiento), 1, f ) > 0)
@@ -192,7 +192,7 @@ int agregarMovimientosACuenta( celdaCuentas* cuenta, FILE* f  )
             {
                 AUX_NODO = crearNodo( AUX );
                 cuenta->ListaMovimientos = agregarAlPrincipio( cuenta->ListaMovimientos, AUX_NODO );
-                printf("MOV agregado ID %d\n", AUX.id);
+                //printf("MOV agregado ID %d\n", AUX.id);
             }
         }
     }
@@ -202,7 +202,7 @@ int agregarMovimientosACuenta( celdaCuentas* cuenta, FILE* f  )
 
 }
 
-int cargarDatos( nodoArbolCliente* arbol )
+nodoArbolCliente* cargarDatos( nodoArbolCliente* arbol )
 {
     printf("Cargando Clientes...");
     arbol = cargarArbolCliente( arbol, "cliente.dat" );
@@ -216,6 +216,5 @@ int cargarDatos( nodoArbolCliente* arbol )
     cargarMovimientosPorCliente(arbol, "movimientos.dat");
     printf(" OK.\n");
 
-
-    return 0;
+    return arbol;
 }

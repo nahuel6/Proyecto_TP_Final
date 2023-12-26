@@ -6,8 +6,9 @@
 
 #define ESC 27
 
-stCliente cargarCliente(){
+stCliente cargarCliente(char dni[]){
     stCliente cliente;
+    strcpy( cliente.dni, dni );
 
     cliente.id=idautoincremental();
 
@@ -18,10 +19,6 @@ stCliente cargarCliente(){
     printf("\n Ingrese su apellido: ");
     fflush(stdin);
     gets(cliente.apellido);
-
-    printf("\n Ingrese su dni: ");
-    fflush(stdin);
-    gets(cliente.dni);
 
     printf("\n Ingrese su email: ");
     fflush(stdin);

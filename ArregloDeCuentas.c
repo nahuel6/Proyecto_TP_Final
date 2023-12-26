@@ -30,3 +30,8 @@ adl[v].ListaMovimientos=inicLista();
 v++;
 return v;
 }
+
+void borrarCuenta( celdaCuentas* cuenta ){
+    borrarLista( cuenta->ListaMovimientos );
+    free(cuenta);
+}

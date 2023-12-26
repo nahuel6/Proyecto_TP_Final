@@ -22,8 +22,19 @@ typedef struct _nodoArbolCliente
 nodoArbolCliente * inicArbol ();
 nodoArbolCliente * crearNodoArbol (stCliente dato);
 nodoArbolCliente* agregarNodoArbol (nodoArbolCliente * arbol, nodoArbolCliente * nuevo);
-nodoArbolCliente * buscarClienteXdni (nodoArbolCliente * arbol, int Dni);
+nodoArbolCliente * buscarClienteXdni (nodoArbolCliente * arbol, char Dni[]);
 void inOrder (nodoArbolCliente * arbol);
+
+nodoArbolCliente* cargarClienteAArbol( nodoArbolCliente* arbol );
+
+nodoArbolCliente* borrarCliente(  nodoArbolCliente* arbol );
+nodoArbolCliente* borrarNodoArbol(nodoArbolCliente* arbol, char dni[]);
+
+void mostrarInformacionCliente( nodoArbolCliente* cliente );
+
+void ArbolesToArchivo(nodoArbolCliente* arbol, char nombreArchivo[]);
+void arbolToArchi(nodoArbolCliente * arbol, FILE * archi);
+
 
 
 

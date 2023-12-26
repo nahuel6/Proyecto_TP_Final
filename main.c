@@ -15,120 +15,117 @@
 
 
 
-void cargarArchivoCliente(char nombreArchivo[], int dim);
-void muestraArchivo(char nombreArchivo[]);
-void muestraArchivoCuenta(char nombreArchivoCuenta[]);
-void muestraArchivoMov(char nombreArchivoMov[]);
-void MenuGeneral();
-void menuGeneralA();
+//void cargarArchivoCliente(char nombreArchivo[], int dim);
+
+//
+void menuGeneralA(nodoArbolCliente* arbol);
+//
+//
+//int main()
+//{
+//    menuGeneralA(nuevoArbol);
+////
+//    return 0;
+//}
+
+
+
+//    nodoArbolCliente* nuevoArbol;
+//    nuevoArbol = inicArbol();
+//
+//    nuevoArbol=  cargarDatos( nuevoArbol );
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+
+
+void dibujarCuadro(int x1,int y1,int x2,int y2);
+void gotoxy(int x,int y);
 
 
 int main()
 {
-    //MenuGeneral();
     nodoArbolCliente* nuevoArbol;
     nuevoArbol = inicArbol();
 
-    cargarDatos( nuevoArbol );
+    nuevoArbol=  cargarDatos( nuevoArbol );
 
-   // menuGeneralA();
+    system("mode con: cols=90 lines=30");
+    system("COLOR B0");
+    dibujarCuadro(0,0,78,24);
+    dibujarCuadro(1,1,77,3);
+    gotoxy(30,2);
+    printf("MENU GENERAL");
+    system("cls");
+    printf("\t\t\t\t\t   ===========================\n");
+    printf("\t\t\t\t\t        SISTEMA BANCARIO     \n");
+    printf("\t\t\t\t\t   ===========================\n\n\n");
+
+    menuGeneralA(nuevoArbol);
+
+    gotoxy (2,12);
+    system("pause");
+
+    //ArbolesToArchivo(nuevoArbol, "clientes_bkp");
 
     return 0;
 }
 
-
-void cargarArchivoCliente(char nombreArchivo[],int dim){
-    int i = 0;
-    char op=0;
-    stCliente cliente;
-    FILE* archi=fopen(nombreArchivo,"ab");
-    if(archi){
-        while(op!=ESC){
-            system("cls");
-            cliente=cargarCliente();
-            i++;
-            fwrite(&cliente,sizeof(stCliente),1,archi);
-            printf("\n Ingrese ESC para dejar de cargar...");
-            op=getch();
-            fclose(archi);
-            FILE* archi=fopen(nombreArchivo,"ab");
-        }
-        fclose(archi);
-    }
-}
-
-void muestraArchivo(char nombreArchivo[]){
-    stCliente cliente;
-    FILE* archi=fopen(nombreArchivo,"rb");
-    if(archi){
-        while(fread(&cliente,sizeof(stCliente),1,archi)>0){
-            mostrarCliente(cliente);
-        }
-        fclose(archi);
-    }
-}
-
-void muestraArchivoCuenta(char nombreArchivoCuenta[]){
-    stCuenta cuenta;
-    FILE* archiCuenta=fopen(nombreArchivoCuenta,"rb");
-    if(archiCuenta){
-        while(fread(&cuenta,sizeof(stCuenta),1,archiCuenta)>0){
-            mostrarCuenta(cuenta);
-        }
-        fclose(archiCuenta);
-    }
-}
-
-void muestraArchivoMov(char nombreArchivoMov[]){
-    stMovimiento movimiento;
-    FILE* archiMov=fopen(nombreArchivoMov,"rb");
-    if(archiMov){
-        while(fread(&movimiento,sizeof(stMovimiento),1,archiMov)>0){
-            mostrarMovimiento(movimiento);
-        }
-        fclose(archiMov);
-    }
-}
-
-
-int posMenor (stCliente cliente[], int pos, int v)
+void gotoxy(int x,int y)
 {
-    stCliente menor = cliente[pos];
-    int posmenor = pos;
-    int i = pos +1;
-    while (i<v)
-    {
-        if (atoi (menor.dni) > atoi (cliente[i].dni))
-        {
-            menor = cliente[i];
-            posmenor = i;
-        }
-        i++;
-    }
-    return posmenor;
+    HANDLE hcon;
+    hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD dwPos;
+    dwPos.X = x;
+    dwPos.Y= y;
+    SetConsoleCursorPosition(hcon,dwPos);
 }
 
-void ordenacionPorSeleccion (stCliente cliente[], int v)
+
+
+void dibujarCuadro(int x1,int y1,int x2,int y2)
 {
-    int posmenor;
-    stCliente aux;
-    int i = 0;
-    while (i<v-1)
+    int i;
+
+    for (i=x1; i<x2; i++)
     {
-        posmenor = posMenor(cliente,i,v);
-        aux = cliente[posmenor];
-        cliente[posmenor]=cliente[i];
-        cliente[i]= aux;
-        i++;
+        gotoxy(i,y1);
+        printf("\304");
+        gotoxy(i,y2);
+        printf("\304");
     }
+
+    for (i=y1; i<y2; i++)
+    {
+        gotoxy(x1,i);
+        printf("\263");
+        gotoxy(x2,i);
+        printf("\263");
+    }
+
+    gotoxy(x1,y1);
+    printf("\332");
+    gotoxy(x1,y2);
+    printf("\300");
+    gotoxy(x2,y1);
+    printf("\277");
+    gotoxy(x2,y2);
+    printf("\331");
 }
 
-void muestraArreglo (stCliente cliente[], int v){
-
-for (int i=0; i<v; i++){
-    mostrarCliente(cliente[i]);
+int mostrarOpciones()
+{
+    int i=0;
+    printf("\n ==========================================");
+    printf("\n 1 = Para dar de ALTA cliente");
+    printf("\n 2 = Para dar de BAJA cliente");
+    printf("\n 3 = Para MODIFICAR un cliente");
+    printf("\n 4 = Para BUSCAR un cliente");
+    printf("\n 5 = Para MOSTRAR TODOS los cliente");
+    printf("\n ==========================================");
+    printf("\n Ingrese la opcion a elegir: ");
+    scanf("%d",&i);
+    return i;
 }
-
-}
-
-

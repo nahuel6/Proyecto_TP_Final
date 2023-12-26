@@ -12,6 +12,6 @@ nodoArbolCliente* cargarArbolCliente( nodoArbolCliente* arbol, char nombreArchiv
 int cargarCuentasPorCliente( nodoArbolCliente* arbol, char nombreArchivo[] );
 int agregarCuentasACliente( nodoArbolCliente* arbol, FILE* f );
 
-int cargarDatos( nodoArbolCliente* arbol );
+nodoArbolCliente* cargarDatos( nodoArbolCliente* arbol );
 
 #endif // CONTROLADOR_H_INCLUDED

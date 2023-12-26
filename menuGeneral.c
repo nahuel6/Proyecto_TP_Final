@@ -9,67 +9,25 @@
 
 #define ESC 27
 
-int mostrarOpciones()
-{
-    int i=0;
-    printf("\n ==========================================");
-    printf("\n 1 = Para dar de ALTA cliente");
-    printf("\n 2 = Para dar de BAJA cliente");
-    printf("\n 3 = Para MODIFICAR un cliente");
-    printf("\n 4 = Para BUSCAR un cliente");
-    printf("\n 5 = Para MOSTRAR TODOS los cliente");
-    printf("\n 6 = Para mostrar MOVIMIENTOS");
-    printf("\n 7 = Para HACER UN MOVIMIENTO en una cuenta");
-    printf("\n 8 = Para mostrar MOVIMIENTO por FECHA");
-    printf("\n ==========================================");
-    printf("\n Ingrese la opcion a elegir: ");
-    scanf("%d",&i);
-    return i;
-}
-void muestraOpciones2 ()
-{
-    printf("\n ==========================================");
-    printf("\n 1 - Mostrar el arbol..");
-    printf("\n 2 - ..");
-    printf("\n 3 - ..");
-    printf("\n 4 - ..");
-    printf("\n 5 - ..");
-    printf("\n ==========================================");
-}
-void MenuGeneral ()
-{
-    char option;
-    do
-    {
-        system("cls");
-        MuestraOpciones();
-        switch(option)
-        {
-        case 49:
-            menuGeneralA();
-            break;
-        case 50:
-            menuGeneralB();
-            break;
-        }
-        printf("\n Ingrese ESC para salir del programa");
-        printf("\n Ingrese ENTER para volver al menu");
-        option=getch();
+//int mostrarOpciones()
+//{
+//    int i=0;
+//    printf("\n ==========================================");
+//    printf("\n 1 = Para dar de ALTA cliente");
+//    printf("\n 2 = Para dar de BAJA cliente");
+//    printf("\n 3 = Para MODIFICAR un cliente");
+//    printf("\n 4 = Para BUSCAR un cliente");
+//    printf("\n 5 = Para MOSTRAR TODOS los cliente");
+//    printf("\n 6 = Para mostrar MOVIMIENTOS");
+//
+//    printf("\n ==========================================");
+//    printf("\n Ingrese la opcion a elegir: ");
+//    scanf("%d",&i);
+//    return i;
+//}
 
-    }
-    while(option!=ESC);
-}
 
-void MuestraOpciones ()
-{
-    puts("\n=============================");
-    printf("\n 1_Menu General A");
-    printf("\n 2_Menu General b");
-    puts("\n=============================");
-    printf("\n Elija una opcion...");
-}
-
-void menuGeneralA()
+void menuGeneralA(nodoArbolCliente* arbol)
 {
     char opSalir;
     int opcion=0;
@@ -78,92 +36,51 @@ void menuGeneralA()
     //cargarRandom();
     do
     {
-        system("cls");
+
         opcion=mostrarOpciones();
         switch(opcion)
         {
         case 1:
-            darAltaCliente(ARCHI_CLIENTE,ARCHI_CUENTA);
+            //darAltaCliente(ARCHI_CLIENTE,ARCHI_CUENTA);
+            system("cls");
+            arbol = cargarClienteAArbol(arbol);
             break;
         case 2:
-            bajaCliente();
+            arbol = borrarCliente(arbol);
             break;
         case 3:
             modificarCliente();
             break;
         case 4:
-            buscarCliente();
+            //buscarCliente();
+            system("cls");
+            buscarClienteEnArbolPorDNI(arbol);
             break;
         case 5:
-
-            muestraArchivo(ARCHI_CLIENTE);
-            break;
-        case 6:
-            do
-            {
-                muestraArchivoMov(ARCHI_MOVIMIENTOS);
-                printf("\n Ingrese ESC para volver al menu");
-                opSalir=getch();
-            }
-            while(opSalir!=ESC);
-            break;
-        case 7:
-            hacerMovMenu();
-            break;
-        }
-        printf("\n Ingrese ESC para salir del programa");
-        printf("\n Ingrese ENTER para volver al menu");
-        opSalir=getch();
-    }
-    while(opSalir!=ESC);
-}
-void menuGeneralB()
-{
-    char opSalir;
-    int opcion=0;
-    int v=0;
-    stCliente cliente[DIM];
-    nodoArbolCliente* arbol=inicArbol();
-    v=pasarArchivoArreglo(cliente,ARCHI_CLIENTE,DIM);
-    ordenacionPorSeleccion(cliente,v);
-    arbol=arregloAarbol(cliente,0,19,arbol);
-    muestraArreglo(cliente,v);
-
-    do
-    {
-        //system("cls");
-        muestraOpciones2();
-        switch(opcion)
-        {
-        case 49:
+            //muestraArchivo(ARCHI_CLIENTE);
             inOrder(arbol);
             break;
-        case 50:
-
-            break;
-        case 51:
-
-            break;
-        case 52:
-
-            break;
-        case 53:
-
-
-            break;
-        case 54:
-
-            break;
-        case 55:
-
-            break;
+//        case 6:
+////            do
+////            {
+////                muestraArchivoMov(ARCHI_MOVIMIENTOS);
+////                printf("\n Ingrese ESC para volver al menu");
+////                opSalir=getch();
+////            }
+////            while(opSalir!=ESC);
+////            break;
+//        case 7:
+//            hacerMovMenu();
+//            break;
         }
         printf("\n Ingrese ESC para salir del programa");
         printf("\n Ingrese ENTER para volver al menu");
         opSalir=getch();
+        system("cls");
     }
     while(opSalir!=ESC);
 }
+
 
 void movimientoPorFecha()
 {
@@ -334,38 +251,28 @@ void modificarCliente()
 
 
 
-void buscarCliente()
-{
-    stCliente cliente;
-    char dni[12];
-    int flag=0;
 
-    FILE* archi=fopen(ARCHI_CLIENTE,"rb");
-    if(archi)
-    {
-        system("cls");
-        printf("\n Ingrese el DNI del cliente: ");
-        fflush(stdin);
-        gets(dni);
-        flag=buscarDni(archi,dni);
-        if(flag==0)
-        {
-            printf("\n El DNI no se encuentra registrado...");
-        }
-        else
-        {
-            fseek(archi,0,SEEK_SET);
-            while(flag==1 && fread(&cliente,sizeof(stCliente),1,archi)>0)
-            {
-                if(strcmp(dni,cliente.dni)==0)
-                {
-                    mostrarCliente(cliente);
-                    flag=0;
-                }
-            }
-        }
-        fclose(archi);
+
+
+int buscarClienteEnArbolPorDNI(nodoArbolCliente* arbol){
+    //38354542
+    char DNI[12];
+    nodoArbolCliente* result = NULL;
+    printf("Ingrese el DNI del cliente: ");
+    scanf("%s", DNI);
+
+    result = buscarClienteXdni(arbol, DNI);
+
+    if(result){
+        printf("\nCliente Encontrado!\n");
+        //mostrarCliente( result->Dato );
+        mostrarInformacionCliente(result);
+    }else{
+        printf("Cliente no registrado.\n");
     }
+
+    return 1;
+
 }
 
 void bajaCliente()
@@ -491,66 +398,66 @@ void hacerMovMenu()
     }
 }
 
-void darAltaCliente(char nombreArchivo[],char nombreCuentaArchi[])
-{
-    stCliente cliente;
-    stCuenta cuenta;
-    char op;
-    char dni[12];
-    int opcion=0;
-    int flag=0;
-    FILE* archi=fopen(nombreArchivo,"a+b");
-    FILE* archiCuenta=fopen(nombreCuentaArchi,"a+b");
-    if(archi && archiCuenta)
-    {
-        while(op!=ESC)
-        {
-            system("cls");
-            printf("\n Ingrese el DNI a cargar: ");
-            fflush(stdin);
-            gets(dni);
-            flag=buscarDni(archi,dni);
-            if(flag==0)
-            {
-                cliente=cargarCliente();
-                fseek(archi,sizeof(stCliente)*(-1),SEEK_END);
-                fwrite(&cliente,sizeof(stCliente),1,archi);
-                opcion=mostrarOpcionDeCuenta();
-                switch(opcion)
-                {
-                case 1:
-                    cuenta=cargarCuenta(cliente.id,cliente.nroCliente,opcion);
-                    fseek(archiCuenta,sizeof(stCuenta)*(-1),SEEK_END);
-                    fwrite(&cuenta,sizeof(stCuenta),1,archiCuenta);
-                    break;
-                case 2:
-                    cuenta=cargarCuenta(cliente.id,cliente.nroCliente,opcion);
-                    fseek(archiCuenta,sizeof(stCuenta)*(-1),SEEK_END);
-                    fwrite(&cuenta,sizeof(stCuenta),1,archiCuenta);
-                    break;
-                case 3:
-                    cuenta=cargarCuenta(cliente.id,cliente.nroCliente,opcion);
-                    fseek(archiCuenta,sizeof(stCuenta)*(-1),SEEK_END);
-                    fwrite(&cuenta,sizeof(stCuenta),1,archiCuenta);
-                    break;
-                }
-            }
-            else
-            {
-                printf("\n El DNI ingresado ya se encuentra en la base de datos");
-            }
-            printf("\n Ingresa ESC para volver al menu principal");
-            printf("\n Ingresa ENTER para intentar con otro DNI");
-            op=getch();
-            fclose(archi);
-            fclose(archiCuenta);
-            FILE* archi=fopen(nombreArchivo,"a+b");
-            FILE* archiCuenta=fopen(nombreCuentaArchi,"a+b");
-        }
-        fclose(archi);
-        fclose(archiCuenta);
-    }
-}
+//void darAltaCliente(char nombreArchivo[],char nombreCuentaArchi[])
+//{
+//    stCliente cliente;
+//    stCuenta cuenta;
+//    char op;
+//    char dni[12];
+//    int opcion=0;
+//    int flag=0;
+//    FILE* archi=fopen(nombreArchivo,"a+b");
+//    FILE* archiCuenta=fopen(nombreCuentaArchi,"a+b");
+//    if(archi && archiCuenta)
+//    {
+//        while(op!=ESC)
+//        {
+//            system("cls");
+//            printf("\n Ingrese el DNI a cargar: ");
+//            fflush(stdin);
+//            gets(dni);
+//            flag=buscarDni(archi,dni);
+//            if(flag==0)
+//            {
+//                cliente=cargarCliente();
+//                fseek(archi,sizeof(stCliente)*(-1),SEEK_END);
+//                fwrite(&cliente,sizeof(stCliente),1,archi);
+//                opcion=mostrarOpcionDeCuenta();
+//                switch(opcion)
+//                {
+//                case 1:
+//                    cuenta=cargarCuenta(cliente.id,cliente.nroCliente,opcion);
+//                    fseek(archiCuenta,sizeof(stCuenta)*(-1),SEEK_END);
+//                    fwrite(&cuenta,sizeof(stCuenta),1,archiCuenta);
+//                    break;
+//                case 2:
+//                    cuenta=cargarCuenta(cliente.id,cliente.nroCliente,opcion);
+//                    fseek(archiCuenta,sizeof(stCuenta)*(-1),SEEK_END);
+//                    fwrite(&cuenta,sizeof(stCuenta),1,archiCuenta);
+//                    break;
+//                case 3:
+//                    cuenta=cargarCuenta(cliente.id,cliente.nroCliente,opcion);
+//                    fseek(archiCuenta,sizeof(stCuenta)*(-1),SEEK_END);
+//                    fwrite(&cuenta,sizeof(stCuenta),1,archiCuenta);
+//                    break;
+//                }
+//            }
+//            else
+//            {
+//                printf("\n El DNI ingresado ya se encuentra en la base de datos");
+//            }
+//            printf("\n Ingresa ESC para volver al menu principal");
+//            printf("\n Ingresa ENTER para intentar con otro DNI");
+//            op=getch();
+//            fclose(archi);
+//            fclose(archiCuenta);
+//            FILE* archi=fopen(nombreArchivo,"a+b");
+//            FILE* archiCuenta=fopen(nombreCuentaArchi,"a+b");
+//        }
+//        fclose(archi);
+//        fclose(archiCuenta);
+//    }
+//}
 
 int buscarDni(char nombreArchivo[], char dni[10])
 {
@@ -564,13 +471,5 @@ int buscarDni(char nombreArchivo[], char dni[10])
             flag=1;
         }
     }
-    return flag;
-}
-int validarPorDni()
-{
-    int flag=0;
-
-
-
     return flag;
 }
